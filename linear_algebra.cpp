@@ -44,7 +44,7 @@ void reduce(vector<vector<double>> &mat){
     for(int i=0;i<mat.size();i++){
         int pivot = get_pivot(mat[i]);
         if(pivot==mat[i].size())continue;
-        for(int j=mat[i].size();j>=0;j--)mat[i][j]/=mat[i][pivot];
+        for(int j=mat[i].size()-1;j>=0;j--)mat[i][j]/=mat[i][pivot];
     }
     sortMatrix(mat);
 }
@@ -53,28 +53,30 @@ void solveMatrix(vector<vector<double>> &mat)
     for (int i = 0; i < mat.size(); i++)
     {
         int pivot = get_pivot(mat[i]);
-        // cout << pivot << '\n';
+        cout <<"index"<<i<<"pvot="<< pivot << '\n';
         if (pivot != mat[i].size())
         {
             for (int j = 0; j < mat.size(); j++)
             {
                 if (i == j || !mat[j][pivot])
                     continue;
-                // cout << i << "--->" << j << '\n';
+                cout << i << "--->" << j << '\n';
                 rowOperation(mat, -mat[j][pivot] / mat[i][pivot], i, j);
 
                 for (int i = 0; i < mat.size(); i++)
                 {
-                    // for (int j = 0; j < mat[i].size(); j++)
-                        // cout << mat[i][j] << ' ';
+                    for (int j = 0; j < mat[i].size(); j++)
+                        cout << mat[i][j] << ' ';
 
-                    // cout << '\n';
+                    cout << '\n';
                 }
             }
         }
     }
+    cout<<"solved\n";
     
     reduce(mat);
+    cout<<"reduced\n";
 }
 
 void test()

@@ -1,4 +1,5 @@
-
+#pragma comment(linker, "/STACK:2000000")
+#pragma comment(linker, "/HEAP:2000000")
 #include<bits/stdc++.h>
 // #include "D:\Circuits-solver\linear_algebra.cpp"
 #include "D:\Circuits-solver\circuits_analyser.cpp"
@@ -39,6 +40,7 @@ int main(int argc, char const *argv[])
             cout<<"Choose component:\n";
             cout<<"1- Battery\n";
             cout<<"2- Resistor\n";
+            cout<<"3- Wire\n";
             int comp=0;
             cin>>comp;
             if(comp==1){
@@ -52,12 +54,28 @@ int main(int argc, char const *argv[])
                 cin>>comps[a][b].second;
                 comps[b][a].second=comps[a][b].second;
 
+            }else if(comp==3){
+                comps[a][b].first=comps[b][a].first=1;
+                comps[b][a].second=comps[a][b].second=0;
+
             }
 
 
 
         }
-
+        else if(cmnd==2){
+            cout<<"Select node number"<<n<<"\n";
+            cout<<"Node:";
+            int a;
+            cin>>a;
+            cout<<"Choose component:\n";
+            cout<<"1- Ground\n";
+            int comp;
+            cin>>comp;
+            if(comp==1){
+                comps[a][a].first=comps[a][a].first=3;
+            }
+        }
     }while(cmnd!=3);
 
     cout<<"Solving as ground at node 1:";
@@ -71,7 +89,17 @@ int main(int argc, char const *argv[])
         cout<<"2-Get voltage difference\n";
         cout<<"3-Exit\n";
         cin>>cmnd;
+        if(cmnd==2){
+            cout<<"Enter two nodes a,b to get Va-Vb:";
+            cout<<"Node a:";
+            int a;
+            cin>>a;
 
+            cout<<"Node b:";
+            int b;
+            cin>>b;
+            cout<<"Voltage difference ="<<volts[a-1]-volts[b-1]<<'\n';
+        }
     }while(cmnd!=3);
 
     cout<<"Finished\n";
