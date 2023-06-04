@@ -6,7 +6,7 @@
 using namespace std;
 int main(int argc, char const *argv[])
 {
-    // testCircuit();
+    testCircuit();
     cout<<"######## Circuits solver #############";
     cout<<"Enter the number of nodes:";
     int n;
@@ -82,14 +82,25 @@ int main(int argc, char const *argv[])
     vector<double>volts=solveCircuit(comps,n);
     for(int i=0;i<volts.size();i++)cout<<"v"<<i+1<<"="<<volts[i]<<", ";
     cout<<'\n';
-    //TODO: OUTPUT all VOLTS
+    vector<vector<double> >answerCurrent= solveCurrent(comps,n,volts);
     do{
         cout<<"Choose what you wanT:\n";
         cout<<"1-Get current\n";
         cout<<"2-Get voltage difference\n";
         cout<<"3-Exit\n";
         cin>>cmnd;
-        if(cmnd==2){
+        if(cmnd==1){
+            cout<<"Enter two nodes a,b to get current from a to b:";
+            cout<<"Node a:";
+            int a;
+            cin>>a;
+
+            cout<<"Node b:";
+            int b;
+            cin>>b;
+            cout<<"Current ="<<answerCurrent[a][b]<<'\n';
+        }
+        else if(cmnd==2){
             cout<<"Enter two nodes a,b to get Va-Vb:";
             cout<<"Node a:";
             int a;
