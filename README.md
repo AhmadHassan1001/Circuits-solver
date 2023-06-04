@@ -2,7 +2,7 @@
 
 ## Project background:
 
-This is practice project to implement knowledge of courses of first semister in Alexandria University-FOE-CSED that our Dr.Hicham Elmongui suggested.
+This is practice project to implement knowledge of courses of first semister in `Alexandria University-FOE-CSED` that our `Dr.Hicham Elmongui` suggested.
 
 It implements knowledge of circuits,programming and linear algebra.
 
