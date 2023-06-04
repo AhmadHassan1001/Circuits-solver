@@ -1,15 +1,16 @@
 
 #include<bits/stdc++.h>
-#include "D:\Circuits-solver\linear_algebra.cpp"
+// #include "D:\Circuits-solver\linear_algebra.cpp"
+#include "D:\Circuits-solver\circuits_analyser.cpp"
 using namespace std;
 int main(int argc, char const *argv[])
 {
-    test();
+    // testCircuit();
     cout<<"######## Circuits solver #############";
     cout<<"Enter the number of nodes:";
     int n;
     cin>>n;
-    vector<vector<pair<double,int>>>comps(n+1,vector<pair<double,int>>(n+1,{0,0}));
+    vector<vector<pair<int,double>>>comps(n+1,vector<pair<int,double>>(n+1,{0,0}));
     int cmnd=0;
     
     do{
@@ -19,7 +20,7 @@ int main(int argc, char const *argv[])
         cout<<"3-solve\n";
         cin>>cmnd;
         if(cmnd==1){
-            cout<<"Select two different nodes number less than"<<n+1<<"\n";
+            cout<<"Select two different nodes number less than"<<n<<"\n";
             cout<<"Node a:";
             int a;
             cin>>a;
@@ -60,7 +61,9 @@ int main(int argc, char const *argv[])
     }while(cmnd!=3);
 
     cout<<"Solving as ground at node 1:";
-    
+    vector<double>volts=solveCircuit(comps,n);
+    for(int i=0;i<volts.size();i++)cout<<"v"<<i+1<<"="<<volts[i]<<", ";
+    cout<<'\n';
     //TODO: OUTPUT all VOLTS
     do{
         cout<<"Choose what you wanT:\n";
@@ -77,3 +80,24 @@ int main(int argc, char const *argv[])
     return 0;
 }
 
+/**
+ * 
+3
+1
+1
+2
+1
+5
+1
+2
+3
+2
+2
+1
+3
+1
+2
+3
+3
+
+*/
