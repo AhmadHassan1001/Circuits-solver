@@ -6,7 +6,7 @@
 using namespace std;
 int main(int argc, char const *argv[])
 {
-    testCircuit();
+    // testCircuit();
     cout<<"######## Circuits solver #############";
     cout<<"Enter the number of nodes:";
     int n;
