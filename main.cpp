@@ -84,6 +84,12 @@ int main(int argc, char const *argv[])
     for(int i=0;i<volts.size();i++)cout<<"v"<<i+1<<"="<<volts[i]<<", ";
     cout<<'\n';
     vector<vector<double> >answerCurrent= solveCurrent(comps,n,volts);
+    // for(int i=0;i<answerCurrent.size();i++){
+    //     for(int j=0;j<answerCurrent[i].size();j++){
+    //         cout<<answerCurrent[i][j]<<' ';
+    //     }
+    //     cout<<'\n';
+    // }
     do{
         cout<<"Choose what you wanT:\n";
         cout<<"1-Get current\n";
@@ -139,5 +145,7 @@ int main(int argc, char const *argv[])
 2
 3
 3
+
+
 
 */

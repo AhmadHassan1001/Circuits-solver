@@ -189,6 +189,7 @@ vector<vector<double>> solveCurrent(vector<vector<pair<int, double>>> &comps, in
                             {
                                 if (k == j)
                                     continue;
+                                if(comps[i][k].first==1||comps[i][k].first==2)
                                 currents[i][j] -= currents[i][k];
                                 flag = 1;
                             }
@@ -212,6 +213,7 @@ vector<vector<double>> solveCurrent(vector<vector<pair<int, double>>> &comps, in
                             {
                                 if (k == j)
                                     continue;
+                                if(comps[i][k].first==1||comps[i][k].first==2)
                                 currents[j][i] -= currents[j][k];
                                 flag = 1;
                             }
