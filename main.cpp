@@ -7,7 +7,7 @@ using namespace std;
 int main(int argc, char const *argv[])
 {
     // testCircuit();
-    cout<<"######## Circuits solver #############";
+    cout<<"######## Circuits solver #############\n";
     cout<<"Enter the number of nodes:";
     int n;
     cin>>n;
@@ -21,7 +21,7 @@ int main(int argc, char const *argv[])
         cout<<"3-solve\n";
         cin>>cmnd;
         if(cmnd==1){
-            cout<<"Select two different nodes number less than"<<n<<"\n";
+            cout<<"Select two different nodes number less than "<<n+1<<"\n";
             cout<<"Node a:";
             int a;
             cin>>a;
