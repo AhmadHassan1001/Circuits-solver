@@ -72,23 +72,23 @@ vector<double> solveCircuit(vector<vector<pair<int, double>>> &comps, int n)
     }
     if (matrix.size() == 0)
     {
-        cout << "size:" << matrix.size() << '\n';
+        // cout << "size:" << matrix.size() << '\n';
         vector<double> ground_equation(circuit[0].size());
         ground_equation[0] = 1;
         matrix.push_back(ground_equation); /// ground at node 1
     }
-    cout << "size:" << matrix.size() << '\n';
+    // cout << "size:" << matrix.size() << '\n';
     for (int i = 1; i <= n; i++)
     {
         if (!vis[i])
         {
             super_nodes = vector<int>();
-            cout << "getting super\n";
+            // cout << "getting super\n";
             get_super(i);
-            cout << "gor super\n";
-            for (int j = 0; j < super_nodes.size(); j++)
-                cout << super_nodes[j] << ' ';
-            cout << '\n';
+            // cout << "gor super\n";
+            // for (int j = 0; j < super_nodes.size(); j++)
+            //     cout << super_nodes[j] << ' ';
+            // cout << '\n';
 
             vector<double> equation = get_current_equation(super_nodes);
             matrix.push_back(equation);
@@ -116,31 +116,31 @@ vector<double> solveCircuit(vector<vector<pair<int, double>>> &comps, int n)
     //     cout << '\n';
     // }
     solveMatrix(matrix);
-    cout << "Matrix:" << '\n';
-    for (int i = 0; i < matrix.size(); i++)
-    {
-        for (int j = 0; j < matrix[i].size(); j++)
-            cout << matrix[i][j] << ' ';
-        cout << '\n';
-    }
-    cout << "answering\n"
-         << n;
+    // cout << "Matrix:" << '\n';
+    // for (int i = 0; i < matrix.size(); i++)
+    // {
+    //     for (int j = 0; j < matrix[i].size(); j++)
+    //         cout << matrix[i][j] << ' ';
+    //     cout << '\n';
+    // }
+    // cout << "answering\n"
+    //      << n;
     vector<double> answer(n);
-    cout << "answering\n"
-         << n;
-    // for(int i=0;i<n;i++)answer.push_back(0);
-    cout << "answering\n"
-         << matrix.size();
+    // cout << "answering\n"
+    //      << n;
+    // // for(int i=0;i<n;i++)answer.push_back(0);
+    // cout << "answering\n"
+    //      << matrix.size();
     for (int i = 0; i < matrix.size(); i++)
     {
-        cout << i << '\n';
+        // cout << i << '\n';
         int pivot = get_pivot(matrix[i]);
-        cout << pivot << '\n';
+        // cout << pivot << '\n';
         if (pivot == matrix[i].size())
             continue;
         answer[pivot] = matrix[i][n];
     }
-    cout << "answwered\n";
+    // cout << "answwered\n";
     return answer;
 }
 

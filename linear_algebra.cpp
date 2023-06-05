@@ -53,23 +53,23 @@ void solveMatrix(vector<vector<double>> &mat)
     for (int i = 0; i < mat.size(); i++)
     {
         int pivot = get_pivot(mat[i]);
-        cout <<"index"<<i<<"pvot="<< pivot << '\n';
+        // cout <<"index"<<i<<"pvot="<< pivot << '\n';
         if (pivot != mat[i].size())
         {
             for (int j = 0; j < mat.size(); j++)
             {
                 if (i == j || !mat[j][pivot])
                     continue;
-                cout << i << "--->" << j << '\n';
+                // cout << i << "--->" << j << '\n';
                 rowOperation(mat, -mat[j][pivot] / mat[i][pivot], i, j);
 
-                for (int i = 0; i < mat.size(); i++)
-                {
-                    for (int j = 0; j < mat[i].size(); j++)
-                        cout << mat[i][j] << ' ';
+                // for (int i = 0; i < mat.size(); i++)
+                // {
+                //     for (int j = 0; j < mat[i].size(); j++)
+                //         cout << mat[i][j] << ' ';
 
-                    cout << '\n';
-                }
+                //     cout << '\n';
+                // }
             }
         }
     }
