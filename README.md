@@ -21,6 +21,10 @@ Solve any electric circuit knowing its components.
 - No invalid circuits(ground conflicts, battary conflicts..etc)
 - No invalid input
 
+## How to use:
+- clone repo
+- run main.exe
+- follow instructions in program
 
 ## Technical overview:
 - Use nodal analysis to solve the circuit:
