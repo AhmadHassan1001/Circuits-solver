@@ -1,0 +1,14 @@
+- Battry as value 1
+- Resistor as value 2
+- Ground as value 3
+- Use nodal analysis
+- Use linear solver
+- create equation for each terminal
+- dfs for super nodes
+- for each node add its equation with a vector of cofficents
+- separate individual networks
+- get voltage difference
+- get current in a branch
+- get equivalent resistance
+- circuits array 1-indexed
+- linear array 0-indexed
